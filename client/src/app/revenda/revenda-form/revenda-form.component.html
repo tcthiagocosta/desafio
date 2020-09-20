@@ -1,0 +1,104 @@
+<h1 class="mt-4">Usuário</h1>
+<div class="container">
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">{{revenda.id ? 'Alteração':'Novo Cadastro'}}</li>
+    </ol>
+    <form #revendaForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success" role="alert" *ngIf="success == true" >
+                    Revenda salva com sucesso!
+                </div>
+                <div class="alert alert-danger" role="alert" *ngFor="let erro of errors" >
+                    {{erro}}
+                 </div>
+            </div>
+        </div>
+
+        <div class="row" *ngIf="revenda.id">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>ID:</label>
+                    <input type="text" class="form-control" disabled=true [ngModel]="revenda.id" name="id">
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Data cadastro:</label>
+                    <input 
+                        type="text" 
+                        class="form-control"
+                        [(ngModel)]="revenda.dataColeta"
+                        name="dataColeta"
+                    >
+                </div>
+            </div>  
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Valor compra:</label>
+                    <input 
+                        type="text" 
+                        class="form-control"
+                        [(ngModel)]="revenda.valorCompra"
+                        name="valorCompra"
+                    >
+                </div>
+            </div> 
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Valor venda:</label>
+                    <input 
+                        type="text" 
+                        class="form-control"
+                        [(ngModel)]="revenda.valorVenda"
+                        name="valorVenda"
+                    >
+                </div>
+            </div>              
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Combustível: </label>
+                    <select class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="revenda.combustivel.id">
+                        <option value="">Selecione ...</option>
+                        <option *ngFor="let combustivel of combustiveis" [ngValue]="combustivel.id">
+                            {{ combustivel.nome }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Distribuidora: </label>
+                    <select class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="revenda.distribuidora.id">
+                        <option value="">Selecione ...</option>
+                        <option *ngFor="let distribuidora of distribuidoras" [ngValue]="distribuidora.id">
+                            {{  distribuidora.nome }}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-success" *ngIf="!revenda.id">
+                    <i class="fa fa-save"></i> Salvar
+                </button>
+                <button type="submit" class="btn btn-primary ml-1" *ngIf="revenda.id">
+                    <i class="fa fa-sync-alt"></i> Atualizar Cadastro
+                </button>
+
+                <button type="button" class="btn btn-danger ml-1" (click)="voltarParaListagem()">
+                    <i class="fa fa-arrow-alt-circle-left"></i> Voltar
+                </button>
+            </div>
+        </div>
+    </form>
+
+</div>

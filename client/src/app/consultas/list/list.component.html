@@ -1,0 +1,180 @@
+<h1 class="mt-4">Consultas</h1>
+<div class="container">
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">{{titulo}}</li>
+    </ol>
+    
+    <div class="row"  *ngIf="nameParam == 'mediaPreco'">
+        <div class="col-md-12">
+            <table class="table table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>Municipio</th>
+                        <th>valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let result of resultadoConsulta">
+                        <td>{{ result.MUNICIPIO }}</td>
+                        <td>{{ result.VALOR_VENDA }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row"  *ngIf="nameParam == 'porBandeira'">
+        <div class="col-md-12">
+            <table class="table table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>Bandeira</th>
+                        <th>valor venda</th>
+                        <th>valor compra</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let result of resultadoConsulta">
+                        <td>{{ result.BANDEIRA }}</td>
+                        <td>{{ result.MEDIA_VALOR_VENDA }}</td>
+                        <td>{{ result.MEDIA_VALOR_COMPRA }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row"  *ngIf="nameParam == 'valorCompraPorMunicipio'">
+        <div class="col-md-12">
+            <table class="table table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>Município</th>
+                        <th>valor venda</th>
+                        <th>valor compra</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let result of resultadoConsulta">
+                        <td>{{ result.MUNICIPIO }}</td>
+                        <td>{{ result.MEDIA_VALOR_VENDA }}</td>
+                        <td>{{ result.MEDIA_VALOR_COMPRA }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row"  *ngIf="nameParam == 'porData'">
+        <div class="col-md-12">
+            <p-accordion>
+                <p-accordionTab header="{{ result.data }}" *ngFor="let result of resultadoConsulta" >
+                    <table class="table table-condensed table-hover">
+                        <thead>
+                            <tr>
+                                <th>Distribuidora</th>
+                                <th>CNPJ</th>
+                                <th>Região</th>
+                                <th>Estado</th>
+                                <th>Município</th>
+                                <th>Valor compra</th>
+                                <th>Valor venda</th>
+                                <th>Combustível</th>
+                                <th>Unidade de medida</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let info of result.listaImformacao">
+                                <td>{{ info.nomeDistribuidora }}</td>
+                                <td>{{ info.cnpjDistribuidora }}</td>
+                                <td>{{ info.regiao }}</td>
+                                <td>{{ info.estado }}</td>
+                                <td>{{ info.municipio }}</td>
+                                <td>{{ info.valorCompra }}</td>
+                                <td>{{ info.valorVenda }}</td>
+                                <td>{{ info.combustivel }}</td>
+                                <td>{{ info.unidadeMedida }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p-accordionTab>                
+            </p-accordion>
+        </div>
+    </div>
+
+    <div class="row"  *ngIf="nameParam == 'porDistribuidora'">
+        <div class="col-md-12">
+            <p-accordion>
+                <p-accordionTab header="{{ result.nomeDistribuidora }}" *ngFor="let result of resultadoConsulta" >
+                    <table class="table table-condensed table-hover">
+                        <thead>
+                            <tr>
+                                <th>CNPJ</th>
+                                <th>Região</th>
+                                <th>Estado</th>
+                                <th>Município</th>
+                                <th>Valor compra</th>
+                                <th>Valor venda</th>
+                                <th>Combustível</th>
+                                <th>Unidade de medida</th>
+                                <th>Data coleta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let info of result.listaInformacaoDistribuidoraDTO">
+                                <td>{{ info.cnpjDistribuidora }}</td>
+                                <td>{{ info.regiao }}</td>
+                                <td>{{ info.estado }}</td>
+                                <td>{{ info.municipio }}</td>
+                                <td>{{ info.valorCompra }}</td>
+                                <td>{{ info.valorVenda }}</td>
+                                <td>{{ info.combustivel }}</td>
+                                <td>{{ info.unidadeMedida }}</td>
+                                <td>{{ info.dataColeta }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p-accordionTab>                
+            </p-accordion>
+        </div>
+    </div>
+
+    <div class="row"  *ngIf="nameParam == 'porSiglaDaRegiao'">
+        <div class="col-md-12">
+            <p-accordion>
+                <p-accordionTab header="{{ result.sigla }}" *ngFor="let result of resultadoConsulta" >
+                    <table class="table table-condensed table-hover">
+                        <thead>
+                            <tr>
+                                <th>Distribuidora</th>
+                                <th>CNPJ</th>
+                                <th>Estado</th>
+                                <th>Município</th>
+                                <th>Valor compra</th>
+                                <th>Valor venda</th>
+                                <th>Combustível</th>
+                                <th>Unidade de medida</th>
+                                <th>Data coleta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let info of result.listaInformacaoAgrupadoPorSiglaDTO">
+                                <td>{{ info.nomeDistribuidora }}</td>
+                                <td>{{ info.cnpjDistribuidora }}</td>
+                                <td>{{ info.estado }}</td>
+                                <td>{{ info.municipio }}</td>
+                                <td>{{ info.valorCompra }}</td>
+                                <td>{{ info.valorVenda }}</td>
+                                <td>{{ info.combustivel }}</td>
+                                <td>{{ info.unidadeMedida }}</td>
+                                <td>{{ info.dataColeta }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p-accordionTab>                
+            </p-accordion>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,106 @@
+<h1 class="mt-4">Revenda</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Consulta</li>
+</ol>
+
+<div class="container">
+    <form #consultaForm="ngForm" (submit)="consultar()">
+        <div class="row">
+            <div class="col-md-6">
+                <label for="inputMes">Mês:</label>
+                <select [(ngModel)]="mes" class="form-control" name="mes">
+                    <option value="">Selecione...</option>
+                    <option *ngFor="let mes of meses" [value]="mes">
+                        {{ mes }}
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Distribuidora: </label>
+                    <select class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="idDistribuidora">
+                        <option value="">Selecione ...</option>
+                        <option *ngFor="let distribuidora of distribuidoras" [ngValue]="distribuidora.id">
+                            {{  distribuidora.nome }}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <br>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-search"></i>Consultar
+                </button>
+
+                <button type="button" 
+                       class="btn btn-warning ml-2"
+                       routerLink="/revenda/form">
+                    <i class="fa fa-plus"></i>Novo
+                </button>
+
+            </div>
+        </div>
+    </form>
+    <br />
+
+    <div class="alert alert-warning" role="alert" *ngIf="menssagem" >
+        {{ menssagem }}
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Data</th>
+                        <th>Valor compra</th>
+                        <th>Valor venda</th>
+                        <th>Combustível</th>
+                        <th>Distribuidora</th>
+                        <th></th>
+                    </tr>
+                    <tr *ngFor="let s of lista">
+                        <td>{{ s.id }}</td>
+                        <td>{{ s.dataColeta }}</td>
+                        <td>{{ s.valorCompra }}</td>
+                        <td>{{ s.valorVenda }}</td>
+                        <td>{{ s.combustivel.nome }}</td>
+                        <td>{{ s.distribuidora.nome }}</td>
+                        <td>
+                            <button class="btn btn-primary" routerLink="/revenda/form/{{ s.id }}">
+                                <i class="fa fa-edit"></i>
+                            </button>
+
+                            <button class="btn btn-danger ml-1" (click)="preparaDelecao(s)"  data-toggle="modal" data-target="#modalDelecao">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="modalDelecao" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Confirmação</h4>
+                </div>
+                <div class="modal-body" *ngIf="revendaSelecionada">
+                   Confirma deleção da revenda na data : {{ revendaSelecionada.dataColeta }} ?
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-success" data-dismiss="modal" (click)="deletarReenda()">Confirmar</button>
+                    <button class="btn-danger" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

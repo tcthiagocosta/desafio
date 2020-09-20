@@ -1,0 +1,114 @@
+<div id="layoutSidenav_nav">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+            <div class="nav">
+                <div class="sb-sidenav-menu-heading">Sistema</div>
+                <a class="nav-link" 
+                   routerLink="/home">
+                    <div class="sb-nav-link-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    Home
+                </a>                
+                <a class="nav-link collapsed" 
+                    routerLink="/usuario" 
+                    data-toggle="collapse"
+                    data-target="#collapseLayouts" 
+                    aria-expanded="false" 
+                    aria-controls="collapseLayouts"
+                   >
+                    <div class="sb-nav-link-icon">
+                        <i class="fas fa-user-lock"></i>
+                    </div>
+                    Usuário
+                </a>
+                <a class="nav-link collapsed" 
+                    routerLink="/file" 
+                    data-toggle="collapse"
+                    data-target="#collapseLayouts" 
+                    aria-expanded="false" 
+                    aria-controls="collapseLayouts"
+                   >
+                    <div class="sb-nav-link-icon">
+                        <i class="fas fa-file-import"></i>
+                    </div>
+                    Importar arquivo
+                </a>
+                <a class="nav-link collapsed" 
+                    routerLink="/revenda" 
+                    data-toggle="collapse"
+                    data-target="#collapseLayouts" 
+                    aria-expanded="false" 
+                    aria-controls="collapseLayouts"
+                   >
+                    <div class="sb-nav-link-icon">
+                        <i class="fas fa-gas-pump"></i>
+                    </div>
+                    Revenda
+                </a>
+
+                
+                <div class="sb-sidenav-menu-heading">Consultas</div>
+                <a class="nav-link collapsed" 
+                   routerLink="/consultas/list/mediaPreco" 
+                   data-toggle="collapse"
+                   data-target="#collapseLayouts" 
+                   aria-expanded="false" 
+                   aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Média por município
+                </a>
+
+                <a class="nav-link collapsed" 
+                   routerLink="/consultas/list/porDistribuidora" 
+                   data-toggle="collapse"
+                   data-target="#collapseLayouts" 
+                   aria-expanded="false" 
+                   aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Por Distribuidora
+                </a>
+                <a class="nav-link collapsed" 
+                   routerLink="/consultas/list/porBandeira" 
+                   data-toggle="collapse"
+                   data-target="#collapseLayouts" 
+                   aria-expanded="false" 
+                   aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Valor da compra e do valor da venda por bandeira
+                </a>
+
+                <a class="nav-link collapsed" 
+                   routerLink="/consultas/list/valorCompraPorMunicipio" 
+                   data-toggle="collapse"
+                   data-target="#collapseLayouts" 
+                   aria-expanded="false" 
+                   aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Valor da compra e do valor da vendaio
+                </a>
+
+                <a class="nav-link collapsed" 
+                   routerLink="/consultas/list/porData" 
+                   data-toggle="collapse"
+                   data-target="#collapseLayouts" 
+                   aria-expanded="false" 
+                   aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Dados agrupados pela data da coleta
+                </a>
+
+                <a class="nav-link collapsed" 
+                   routerLink="/consultas/list/porSiglaDaRegiao" 
+                   data-toggle="collapse"
+                   data-target="#collapseLayouts" 
+                   aria-expanded="false" 
+                   aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Informações importadas por sigla da região
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+</div>

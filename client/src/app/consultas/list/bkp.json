@@ -1,0 +1,110 @@
+<h1 class="mt-4">Consultas</h1>
+<div class="container">
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">{{titulo}}</li>
+    </ol>
+    
+    <div class="row"  *ngIf="nameParam == 'mediaPreco'">
+        <div class="col-md-12">
+            <table class="table table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>Municipio</th>
+                        <th>valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let result of resultadoConsulta">
+                        <td>{{ result.MUNICIPIO }}</td>
+                        <td>{{ result.VALOR_VENDA }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row"  *ngIf="nameParam == 'porBandeira'">
+        <div class="col-md-12">
+            <table class="table table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>Bandeira</th>
+                        <th>valor venda</th>
+                        <th>valor compra</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let result of resultadoConsulta">
+                        <td>{{ result.BANDEIRA }}</td>
+                        <td>{{ result.MEDIA_VALOR_VENDA }}</td>
+                        <td>{{ result.MEDIA_VALOR_COMPRA }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row"  *ngIf="nameParam == 'valorCompraPorMunicipio'">
+        <div class="col-md-12">
+            <table class="table table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>Município</th>
+                        <th>valor venda</th>
+                        <th>valor compra</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let result of resultadoConsulta">
+                        <td>{{ result.MUNICIPIO }}</td>
+                        <td>{{ result.MEDIA_VALOR_VENDA }}</td>
+                        <td>{{ result.MEDIA_VALOR_COMPRA }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row"  *ngIf="nameParam == 'porData'">
+        <div class="col-md-12">
+            
+            <p-treeTable [value]="files">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Name</th>
+                        <th>cnpjDistribuidora</th>
+                        <th>regiao</th>
+                        <th>estado</th>
+                        <th>municipio</th>
+                        <th>valorCompra</th>
+                        <th>valorVenda</th>
+                        <th>combustivel</th>
+                        <th>unidadeMedida</th>
+                        <th>dataColeta</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
+                    <tr>
+                        <td>
+                            <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler>
+                            {{rowData.name}}
+                        </td>
+                        <td>{{rowData.cnpjDistribuidora}}</td>
+                        <td>{{rowData.regiao}}</td>
+                        <td>{{rowData.estado}}</td>
+                        <td>{{rowData.municipio}}</td>
+                        <td>{{rowData.valorCompra}}</td>
+                        <td>{{rowData.valorVenda}}</td>
+                        <td>{{rowData.combustivel}}</td>
+                        <td>{{rowData.unidadeMedida}}</td>
+                        <td>{{rowData.dataColeta}}</td>
+                    </tr>
+                </ng-template>
+            </p-treeTable>
+
+            
+        </div>
+    </div>
+
+
+</div>

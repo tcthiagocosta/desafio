@@ -1,0 +1,107 @@
+{
+    "data":
+    [
+        {
+            "data":{
+                "name":"ABRITTA POSTOS DE SERVIÇOS LTDA",
+                "cnpjDistribuidora": "",
+                "regiao": "",
+                "estado": "",
+                "municipio": "",
+                "valorCompra": "",
+                "valorVenda":"",
+                "combustivel": "",
+                "unidadeMedida": "",
+                "dataColeta": ""
+            },
+            "children":[
+                {
+                    "data":{
+                        "name":"ABRITTA POSTOS DE SERVIÇOS LTDA",
+                        "cnpjDistribuidora": "10668863000195",
+                        "regiao": null,
+                        "estado": "DF",
+                        "municipio": "BRASILIA",
+                        "valorCompra": 3.899,
+                        "valorVenda": 0,
+                        "combustivel": "DIESEL S10",
+                        "unidadeMedida": "R$ / litro",
+                        "dataColeta": "16/01/2019"
+                    }
+                },
+                {
+                    "data":{
+                        "name":"ABRITTA POSTOS DE SERVIÇOS LTDA",
+                         "cnpjDistribuidora": "10668863000195",
+                        "regiao": null,
+                        "estado": "DF",
+                        "municipio": "BRASILIA",
+                        "valorCompra": 3.899,
+                        "valorVenda": 0,
+                        "combustivel": "DIESEL S10",
+                        "unidadeMedida": "R$ / litro",
+                        "dataColeta": "16/01/2019"
+                    }
+                },
+                {
+                    "data":{
+                        "name":"ABRITTA POSTOS DE SERVIÇOS LTDA",
+                         "cnpjDistribuidora": "10668863000195",
+                        "regiao": null,
+                        "estado": "DF",
+                        "municipio": "BRASILIA",
+                        "valorCompra": 3.899,
+                        "valorVenda": 0,
+                        "combustivel": "DIESEL S10",
+                        "unidadeMedida": "R$ / litro",
+                        "dataColeta": "16/01/2019"
+                    }
+                },
+                {
+                    "data":{
+                        "name":"ABRITTA POSTOS DE SERVIÇOS LTDA",
+                         "cnpjDistribuidora": "10668863000195",
+                        "regiao": null,
+                        "estado": "DF",
+                        "municipio": "BRASILIA",
+                        "valorCompra": 3.899,
+                        "valorVenda": 0,
+                        "combustivel": "DIESEL S10",
+                        "unidadeMedida": "R$ / litro",
+                        "dataColeta": "16/01/2019"
+                    }
+                }
+            ]
+        },
+        {
+            "data":{
+                "name":"ABRITTA POSTOS DE SERVIÇOS LTDA",
+                "cnpjDistribuidora": "",
+                "regiao": "",
+                "estado": "",
+                "municipio": "",
+                "valorCompra": "",
+                "valorVenda":"",
+                "combustivel": "",
+                "unidadeMedida": "",
+                "dataColeta": ""
+            },
+            "children":[
+                {
+                    "data":{
+                        "name":"ABRITTA POSTOS DE SERVIÇOS LTDA",
+                        "cnpjDistribuidora": "10668863000195",
+                        "regiao": null,
+                        "estado": "DF",
+                        "municipio": "BRASILIA",
+                        "valorCompra": 3.899,
+                        "valorVenda": 0,
+                        "combustivel": "DIESEL S10",
+                        "unidadeMedida": "R$ / litro",
+                        "dataColeta": "16/01/2019"
+                    }
+                }
+            ]
+        }
+    ]
+}

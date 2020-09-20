@@ -1,0 +1,17 @@
+<h1 class="mt-4">Importar arquivo</h1>
+<div class="container">
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Importar arquivo</li>
+    </ol>
+    <p-fileUpload 
+        chooseLabel="Selecione o arquivo" 
+        url="http://localhost:8080/api/importacao" 
+        mode="basic" 
+        name="file" 
+        accept=".csv,*" 
+        maxFileSize="2e+8" 
+        (onUpload)="onUpload($event)">
+    </p-fileUpload>
+      
+
+</div>
